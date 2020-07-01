@@ -11,8 +11,13 @@ public class TestController {
     @Autowired
     private TestService someService;
 
-    @GetMapping("/getAnswer/{id}")
-    public String getAnswer(@PathVariable("id") String id) {
-        return someService.generateAnswer(id);
+    @GetMapping("/getFirstAnswer/{id}")
+    public String getFirstAnswer(@PathVariable("id") String id) {
+        return someService.generateFirstAnswer(id);
+    }
+
+    @GetMapping("/getSecondAnswer/{id}")
+    public String getSecondAnswer(@PathVariable("id") String id) {
+        return someService.generateSecondAnswer(id);
     }
 }
